@@ -1,0 +1,21 @@
+.widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #161616;
+  color: #161616;
+  width: 140px;
+  height: 140px;
+  border-radius: 10%;
+  //   h3 {
+  //     color: #fff;
+  //     padding: 5px 0;
+  //   }
+  .info {
+    color: #fff;
+    font-size: 20px;
+  }
+  .desc {
+    padding: 5px;
+  }
+}
