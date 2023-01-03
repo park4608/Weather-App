@@ -32,6 +32,7 @@ const Logo = styled.h4`
   color: #fff;
   font-size: 20px;
   padding-top: 20px;
+  text-align: center;
 `;
 
 export interface Props {
@@ -42,7 +43,7 @@ export default function PublicLayout({ children }: Props) {
   return (
     <>
       <Layout style={{ height: '100%', minHeight: '500px' }}>
-        <PageSider breakpoint='sm'>
+        <PageSider breakpoint='sm' collapsedWidth={130}>
           <div>
             <Logo>Global weather</Logo>
           </div>
@@ -55,7 +56,7 @@ export default function PublicLayout({ children }: Props) {
           <Content
             className={styles.contents}
             style={{
-              padding: 24,
+              padding: 12,
               minHeight: 280,
               backgroundColor: '#333333',
             }}>

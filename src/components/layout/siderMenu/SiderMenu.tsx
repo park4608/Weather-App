@@ -5,6 +5,8 @@ import type { MenuProps } from 'antd';
 import styled from 'styled-components';
 import '/node_modules/flag-icons/css/flag-icons.min.css';
 import { Korea, Japan, China, Ghana, Kenya, SouthAfrica, Germany, France, UK, Netherlands, Canada, Mexico, USA, Argentina, Brazil, Uruguay } from './FlagImg';
+import { Asia } from './ContinentsImg';
+import { backgroundImage } from 'assets/images/sidenav/sidenav-card-background.png';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -53,15 +55,15 @@ const SideMenu = styled(Menu)`
   background-color: #060606;
   color: #fff;
   width: 100%;
-  &:i {
+  /* &:i {
     color: #fff;
-  }
+  } */
 `;
 
 const SiderMenu = () => {
   return (
     <>
-      <SideMenu onClick={onClick} mode='vertical' items={items} />
+      <SideMenu onClick={onClick} mode='vertical' items={items} subMenuCloseDelay={0.05} />
     </>
   );
 };

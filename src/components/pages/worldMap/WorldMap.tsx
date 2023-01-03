@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import './WorldMap.scss';
 import countryData from './countryData.json';
 import rd3 from 'react-d3-library';
-import { select, json, geoPath, geoMercator, geoNaturalEarth1, zoom, scaleOrdinal, schemePastel2 } from 'd3';
+import { select, json, geoPath, geoMercator, geoEquirectangular, geoNaturalEarth1, geoOrthographic, zoom, scaleOrdinal, schemePastel2 } from 'd3';
 import { feature } from 'topojson';
 
 function WorldMap() {
-  const projection = geoMercator();
+  // const projection = geoMercator();
+  const projection = geoEquirectangular();
   // const projection = geoNaturalEarth1();
   const pathGenerator = geoPath().projection(projection);
   const countries = feature(countryData, countryData.objects.countries);
@@ -25,6 +26,7 @@ function WorldMap() {
       .data(data)
       .join('path')
       .attr('class', 'country')
+      .attr('d', pathGenerator)
       .attr('fill', (d: any) => colorScale(d.properties.name))
       .append('title') // Add a tooltop
       .text((d: any) => d.properties.name);
@@ -46,7 +48,7 @@ function WorldMap() {
 
   return (
     <>
-      <svg ref={svgRef} style={{ width: '1200px', height: '500px' }}></svg>
+      <svg ref={svgRef} viewBox='-45 -25 1080 480'></svg>
     </>
   );
 }

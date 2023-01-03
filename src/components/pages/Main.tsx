@@ -5,10 +5,8 @@ import WorldMap from './worldMap/WorldMap';
 function Main() {
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <WorldMap />
-        {/* <Widget /> */}
-      </div>
+      <WorldMap />
+      {/* <Widget /> */}
     </>
   );
 }
